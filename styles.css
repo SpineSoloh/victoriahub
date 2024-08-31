@@ -1,0 +1,288 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styles */
+/* Navbar styles */
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightcyan;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navbar Left Section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.navbar .social-media a img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.navbar .social-media a img:hover{
+    background-color: maroon;
+}
+
+/* Navbar Right Section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: lightslategray;
+}
+
+.menu ul li a:hover,
+.menu ul li .dropbtn:hover {
+    background-color: maroon;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .search-bar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* Hero section styles */
+.hero {
+    margin-top: 70px; /* To ensure content doesn't go behind the navbar */
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-images {
+    position: absolute;
+    width: 300%;
+    display: flex;
+    animation: scrollImages 15s infinite linear;
+}
+
+.hero-images img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+@keyframes scrollImages {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-66.66%); }
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 24px;
+}
+
+/* Services section styles */
+
+.icons {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    height: 50px; /* Adjust as needed */
+}
+
+.icon {
+    position: absolute;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#pythonIcon {
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+#jsIcon {
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.services {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.service-card p {
+    font-size: 16px;
+}
+
+/* Footer styles */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    margin-top: 50px;
+}
+
+/* Contact/Location Section */
+.contact-location {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background-color: lightcyan;
+    margin-top: 80px; /* Adjust for navbar offset */
+}
+
+.contact-info {
+    max-width: 45%;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.map-container {
+    max-width: 50%;
+    height: 450px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@keyframes popOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #fff; /* Original color */
+    }
+    33% {
+        color: lightcyan;
+    }
+    66% {
+        color: maroon;
+    }
+    100% {
+        color: #fff; /* Back to original color */
+    }
+}
+
+.hero-text h1,
+.hero-text p {
+    animation: none; /* To prevent animation from starting immediately */
+    transition: transform 0.5s, color 0.5s; /* Smooth transition */
+}
+
+
