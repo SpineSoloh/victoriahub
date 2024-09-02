@@ -27,3 +27,23 @@ function rotateIcons() {
 
 rotateIcons();
 setInterval(rotateIcons, 5000);
+
+// Show the back-to-top button when scrolling down
+window.addEventListener('scroll', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (window.scrollY > 300) { // Show when scrolled 300px down
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+// Smooth scroll to top when clicking the button
+document.getElementById('back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
