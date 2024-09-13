@@ -1,9 +1,8 @@
-/* Basic reset */                                                                                                                                             
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
 }
 
 /* Navbar styles */
@@ -64,7 +63,6 @@
     padding: 10px 15px;
     text-decoration: none;
     color: lightslategray;
-    font-family: serif;
 }
 
 .menu ul li a:hover,
@@ -90,7 +88,6 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-family: serif;
 }
 
 .dropdown-content a:hover {
@@ -144,33 +141,13 @@
 }
 
 .hero-text h1 {
-    font-size: 38px;
+    font-size: 48px;
     margin-bottom: 10px;
-    font-family: serif;
 }
 
 .hero-text p {
     font-size: 24px;
-    font-family: serif;
 }
-
-.get-in-touch-link {
-    display: inline-block;
-    margin-top: 80px; /* Increase this value to add more space */
-    padding: 10px 20px;
-    background-color:lightcyan; /* Button color */
-    color: #007BFF;
-    text-decoration: none;
-    font-size: 1.2em;
-    border-radius: 5px;
-    font-family: serif;
-    transition: background-color 0.3s ease;
-}
-
-.get-in-touch-link:hover {
-    background-color:maroon; /* Darker green on hover */
-}
-
 
 /* Services section styles */
 
@@ -206,74 +183,75 @@
     text-decoration: none;
 }
 
+.services h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+}
 
 .service-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 30px; /* Space between cards */
-    align-items: start; /* Align items at the start */
+    grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
+    gap: 20px; /* Space between the cards */
+    justify-content: center; /* Center the grid items horizontally */
+    align-items: center; /* Center the grid items vertically */
+    padding: 60px;
 }
+
 
 .service-card {
-    background: #f9f9f9; /* Light background color */
-    border: 1px solid #e0e0e0; /* Light border color */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s ease;
     position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
 }
 
-.service-card:hover {
-    transform: translateY(-10px); /* Lift the card on hover */
+.service-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.service-card:nth-child(odd) {
-    margin-top: 60px; /* Offset the odd cards to create staggered effect */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: white;
+    padding: 20px;
+    padding-top: 50px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
-.service-card .read-more {
-    color: #007bff; /* Primary color for 'Read More' links */
-    font-weight: bold;
-    margin-top: 10px;
+.service-card:hover img {
+    transform: scale(1.1); /* Zooms in the image on hover */
 }
 
-@media (max-width: 768px) {
-    .service-grid {
-        grid-template-columns: 1fr; /* Single column layout on mobile */
-        gap: 20px;
-    }
-
-    .service-card:nth-child(odd) {
-        margin-top: 0; /* Remove stagger effect on mobile */
-    }
+.service-card:hover .caption {
+    opacity: 1; /* Show the caption */
+    background-color: rgba(0, 128, 128, 0.8); /* Changes background color to teal on hover */
 }
 
-
-/* Gradient text effect for h2 and h3 */
-.services h2, .services h3 {
-    background: linear-gradient(to right, #4facfe, #38f9d7); /* Adjust the colors as needed */
-    -webkit-background-clip: text;
-    color: transparent;
-    display: inline-block; /* Ensure the text is clipped correctly */
+.caption h3 {
     margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: serif;
+    font-size: 1.5em;
 }
 
-/* Optional: Adding some margin to separate the h2 and icons */
-.services h2 {
-    margin-bottom: 10px; /* Adjust as needed */
-    text-decoration: none;
-    font-family: serif;
+.caption p {
+    margin: 10px 0 0;
 }
 
+.read-more {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: yellow; /* Default color */
+    transition: color 0.3s ease;
+}
 
-.service-card p {
-    font-size: 16px;
-    text-decoration: none;
-    font-family: serif;
+.service-card:hover .read-more {
+    color: orange; /* Change the "Read More" color on hover */
 }
 
 .pricing-section {
@@ -285,13 +263,11 @@
 .pricing-section h2 {
     font-size: 28px;
     color: #002f6c;
-    font-family: serif;
 }
 
 .pricing-section p {
     font-size: 16px;
     color: #555;
-    font-family: serif;
 }
 
 .pricing-section .highlight {
@@ -320,14 +296,12 @@
     font-size: 20px;
     color: #002f6c;
     margin-bottom: 10px;
-    font-family: serif;
 }
 
 .pricing-card p {
     font-size: 14px;
     color: #555;
     margin-bottom: 20px;
-    font-family: serif;
 }
 
 .pricing-card .price {
@@ -396,7 +370,6 @@
 
 .popular h3, .popular p, .popular .price, .popular ul li {
     color: #fff;
-    font-family: serif;
 }
 
 .popular button {
@@ -432,20 +405,17 @@
     color: #002f6c;
     font-size: 24px;
     margin-bottom: 20px;
-    font-family: serif;
 }
 
 .get-us-text p {
     color: #555;
     font-size: 16px;
     margin-bottom: 20px;
-    font-family: serif;
 }
 
 .get-us-text a {
     color: #0066cc;
     text-decoration: none;
-    font-family: serif;
 }
 
 .get-us-text ul {
@@ -515,17 +485,7 @@
 }
 
 .get-us-form button:hover {
-    background-color: #38f9d7;
-}
-
-@media (max-width: 768px) {
-    .get-us-content {
-        flex-direction: column;
-    }
-
-    .get-us-text, .get-us-form {
-        padding: 20px;
-    }
+    background-color: #0056a3;
 }
 
 /* Footer styles */
@@ -544,62 +504,43 @@ footer {
 }
 
 .contact-location {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row; /* Align children (contact-info and map-container) in a row */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    max-width: 1100px; /* Set a maximum width for the section */
+    margin: 0 auto; /* Center the section within its container */
     padding: 20px;
 }
 
 .contact-info {
-    flex: 1 1 45%;
-    max-width: 45%;
-    margin-right: 20px;
-}
-
-.logo {
-    max-width: 150px; /* Adjust the logo size as needed */
-    margin-bottom: 20px;
-}
-
-.contact-info h2, .contact-info h3 {
-    color: #007bff; /* You can customize the color as needed */
-    margin-top: 20px;
-    font-family: serif;
-}
-
-.contact-info p {
-    margin: 10px 0;
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: serif;
-}
-
-.customer-message {
-    margin-top: 10px;
-    padding: 15px;
-    background-color: #4facfe;
-    border-radius: 5px;
+    flex: 1; /* Allow the contact-info to take up available space */
+    padding: 20px;
 }
 
 .map-container {
-    flex: 1 1 45%;
-    max-width: 45%;
+    flex: 1; /* Allow the map-container to take up available space */
+    padding: 20px;
+}
+
+/* Ensure the iframe is responsive */
+.map-container iframe {
+    width: 100%;
+    height: 450px; /* You might adjust this based on design needs */
 }
 
 @media (max-width: 768px) {
     .contact-location {
-        flex-direction: column;
+        flex-direction: column; /* Stack the columns vertically on smaller screens */
     }
-    
-    .contact-info, .map-container {
-        max-width: 100%;
-        margin-right: 0;
-    }
-    
-    .logo {
-        margin-bottom: 15px;
+
+    .contact-info,
+    .map-container {
+        width: 100%;
+        padding: 10px 0; /* Adjust padding for smaller screens */
     }
 }
+
 
 @keyframes popOut {
     0%, 100% {
@@ -737,33 +678,6 @@ footer {
 .get-us-section .content button {
     font-size: 14px;
     padding: 10px 20px;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 24px;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(100px); /* Start off-screen */
-    z-index: 1000; /* Ensure it's on top of other elements */
-}
-
-.back-to-top:hover {
-    background-color: #0056b3;
-}
-
-.back-to-top.show {
-    opacity: 1;
-    transform: translateY(0); /* Bring back on-screen */
 }
 
 /* Additional Styling for Extra Small Devices */
